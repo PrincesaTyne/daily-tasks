@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:daily_tasks/pages/loading.dart';
+import 'package:daily_tasks/pages/add_task.dart';
+import 'package:daily_tasks/pages/home.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Home(),
+  runApp( MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => const Loading(),
+      '/home': (context) => const Home(),
+      '/add-task': (context) => const AddTask(),
+    },
   ));
-}
-
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }
 
